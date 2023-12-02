@@ -1,0 +1,33 @@
+.chat-messages-show-container{
+    background-color: #bbb8b8;
+    height:400px;
+    display:flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.chat-massages-show-list{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.chat-messages-create-container{
+    background: #616161;
+    height:100px;
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    padding: 12px;
+    margin:25px 30px;
+    flex:2;
+    
+}
+
+button{
+    height:35px;
+    margin:auto 40px;
+    width:50px;
+}
