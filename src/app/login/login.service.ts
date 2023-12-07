@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { EnvironmentService } from '../environment.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(private angularFireAuth:EnvironmentService ) {}
+
+  
 }
