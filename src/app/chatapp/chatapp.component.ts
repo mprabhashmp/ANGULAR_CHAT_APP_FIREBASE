@@ -14,7 +14,7 @@ export class ChatappComponent {
   messages: any[] = [];
   newMessage: string = '';
 
-  private messagesSubscription: Subscription | undefined;
+  // private messagesSubscription: Subscription | undefined;
 
   constructor(private chatService: ChatappService) {}
 
