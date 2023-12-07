@@ -6,7 +6,9 @@ import {
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { User } from './User';
+import { User } from './user';
+
+
 
 @Injectable({
   providedIn: 'root'
