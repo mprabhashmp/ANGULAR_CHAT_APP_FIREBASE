@@ -36,37 +36,35 @@ export class AuthServiceService {
     });
   }
   // Sign in with email/password
-  SignIn(email: string, password: string) {
-    return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.SetUserData(result.user);
-        this.afAuth.authState.subscribe((user) => {
-          if (user) {
-            this.router.navigate(['dashboard']);
-          }
-        });
-      })
-      .catch((error) => {
-        window.alert(error.message);
+  async SignIn(email: string, password: string) {
+    try {
+      const result = await this.afAuth
+        .signInWithEmailAndPassword(email, password);
+      this.SetUserData(result.user);
+      this.afAuth.authState.subscribe((user_1) => {
+        if (user_1) {
+          this.router.navigate(['dashboard']);
+        }
       });
+    } catch (error) {
+      window.alert(error.message);
+    }
   }
   // Sign up with email/password
-  SignUp(email: string, password: string) {
-    return this.afAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
-        this.SendVerificationMail();
-        this.SetUserData(result.user);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+  async SignUp(email: string, password: string) {
+    try {
+      const result = await this.afAuth
+        .createUserWithEmailAndPassword(email, password);
+      /* Call the SendVerificaitonMail() function when new user sign
+      up and returns promise */
+      this.SendVerificationMail();
+      this.SetUserData(result.user);
+    } catch (error) {
+      window.alert(error.message);
+    }
   }
   // Send email verfificaiton when new user sign up
-  SendVerificationMail() {
+  async SendVerificationMail() {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
       .then(() => {
@@ -74,7 +72,7 @@ export class AuthServiceService {
       });
   }
   // Reset Forggot password
-  ForgotPassword(passwordResetEmail: string) {
+  async ForgotPassword(passwordResetEmail: string) {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
@@ -90,13 +88,12 @@ export class AuthServiceService {
     return user !== null && user.emailVerified !== false ? true : false;
   }
   // Sign in with Google
-  GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['dashboard']);
-    });
+  async GoogleAuth() {
+    await this.AuthLogin(new auth.GoogleAuthProvider());
+    this.router.navigate(['dashboard']);
   }
   // Auth logic to run auth providers
-  AuthLogin(provider: any) {
+  async AuthLogin(provider: any) {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
@@ -126,7 +123,7 @@ export class AuthServiceService {
     });
   }
   // Sign out
-  SignOut() {
+  async SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['login']);
