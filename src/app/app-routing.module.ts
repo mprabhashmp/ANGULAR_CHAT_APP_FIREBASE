@@ -5,15 +5,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotpassswordComponent } from './forgotpasssword/forgotpasssword.component';
 import { EmailComponent } from './email/email.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { authGuard } from './shared/guard/auth.guard';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
-  {path:"",redirectTo: '/login', pathMatch: 'full'},
+  { path: "" ,redirectTo: '/login', pathMatch: 'full'},
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'forgotpassword', component: ForgotpassswordComponent },
+  { path: 'forgotpasssword', component: ForgotpassswordComponent },
   { path: 'email', component: EmailComponent },
-  {path:'dashboard',component: DashboardComponent,canActivate: [authGuard]},
+  {path:'dashboard' ,component: DashboardComponent,canActivate: [AuthGuard]},
 ];
 
 @NgModule({
