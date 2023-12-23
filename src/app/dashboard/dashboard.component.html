@@ -1,11 +1,9 @@
-<!-- Top navigation -->
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0">
-      <img class="brand-logo"  alt="positronX.io Logo">
-    </a>
-  </nav>
+
+
+  <app-nav-bar></app-nav-bar>
+
   <!-- Sidebar navigation -->
-  <div class="container-fluid">
+  <div class="container-fluid top">
     <div class="row">
       <nav class="col-md-2 d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
@@ -38,7 +36,6 @@
                   alt="{{user.displayName}}">
                 <div class="media-body">
                   <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                  <p>User ID: <strong>{{user.uid}}</strong></p>
                   <p>Email: <strong>{{user.email}}</strong></p>
                   <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
                 </div>

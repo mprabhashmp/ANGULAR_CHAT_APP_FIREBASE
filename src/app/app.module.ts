@@ -17,6 +17,7 @@ import { environment } from '../app/environment';
 import { ForgotpassswordComponent } from './forgotpasssword/forgotpasssword.component';
 import { EmailComponent } from './email/email.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     ForgotpassswordComponent,
     EmailComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

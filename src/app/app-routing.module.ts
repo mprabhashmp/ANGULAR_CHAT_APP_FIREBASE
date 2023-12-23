@@ -6,6 +6,7 @@ import { ForgotpassswordComponent } from './forgotpasssword/forgotpasssword.comp
 import { EmailComponent } from './email/email.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const routes: Routes = [
   { path: "" ,redirectTo: '/login', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'forgotpasssword', component: ForgotpassswordComponent },
   { path: 'email', component: EmailComponent },
   {path:'dashboard' ,component: DashboardComponent,canActivate: [AuthGuard]},
+  {path:'nav-bar' ,component:NavBarComponent,canActivate: [AuthGuard]},
 ];
 
 @NgModule({
