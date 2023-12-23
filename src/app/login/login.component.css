@@ -1,0 +1,41 @@
+.bg {
+    /* Other background styles */
+    width: 750px; /* Increase width */
+    height: 750px; /* Increase height */
+    animation: rotateImage 100s linear infinite; /* Increase duration for slower rotation */
+  }
+  
+  @keyframes rotateImage {
+    from {
+      transform: scale(1) rotate(0deg); /* Initial scale */
+    }
+    to {
+      transform: scale(1) rotate(360deg); /* Increase scale and full rotation */
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px; /* Adjust the container height */
+  }
+  
+  .logo {
+    align-items: center; /* Adjust the font size to make it larger */
+    font-weight: bold; /* Make the font bold for a professional look */
+    color: #8570d9; /* Adjust the text color */
+    animation: animateLogo 30s ease-in-out infinite alternate; /* Add animation */
+  }
+  
+  @keyframes animateLogo {
+    0% {
+      transform: scale(0.05);
+    }
+    100% {
+      transform: scale(1); /* Increase the scale for animation */
+    }
+  }
+  
+  
+  

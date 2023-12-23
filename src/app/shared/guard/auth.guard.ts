@@ -1,4 +1,4 @@
-import { CanActivateFn } from '@angular/router';
+// import { CanActivateFn } from '@angular/router';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -9,15 +9,12 @@ import {
 import { Observable } from 'rxjs';
 import { AuthServiceService } from 'src/app/auth-service.service';
 
-// @Injectable({
-//   providedIn: 'root',
-// })
+@Injectable({
+  providedIn: 'root',
+})
 
-export const authGuard: CanActivateFn = (route, state) => {
-  return true;
-};
 export class AuthGuard {
-  constructor(public authService: AuthServiceService, public router: Router) {}
+  constructor(public authService:AuthServiceService, public router: Router) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
