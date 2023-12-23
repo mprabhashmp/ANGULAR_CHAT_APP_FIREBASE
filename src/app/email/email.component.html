@@ -23,10 +23,10 @@
       <div class="mt-4">
           <button (click)="verifyEmail()" class="px-2 py-2 text-blue-200 bg-blue-600 rounded">
          
-              <span  *ngIf="!isLoading">Click to Verify Email</span>
-              <span  *ngIf="isLoading">
+              <span *ngIf="!isLoading">Click to Verify Email</span>
+              <span *ngIf="isLoading">
                 <div class="spinner"></div>
-                  <!-- <i class="animate-spin loader"></i> -->
+                
               </span>
           </button>
           <p class="mt-4 text-sm">
