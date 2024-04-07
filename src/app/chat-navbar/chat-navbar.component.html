@@ -1,0 +1,11 @@
+<nav class="nav-bar">
+    <h1>Angular Chat</h1>
+    <ng-container *ngIf="user; else signIn">
+      <button (click)="signOut()" class="sign-out" type="button">Sign Out</button>
+    </ng-container>
+    <ng-template #signIn>
+      <button class="sign-in">
+        <img (click)="googleSignIn()" [src]="GoogleSignin" alt="sign in with google" type="button">
+      </button>
+    </ng-template>
+  </nav>
