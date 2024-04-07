@@ -1,7 +1,8 @@
 .bg {
     /* Other background styles */
-    width: 750px; /* Increase width */
-    height: 750px; /* Increase height */
+  width: 50%;
+  max-width: 50vw; /* Ensure full viewport width */
+  height: auto; /* Increase height */
     animation: rotateImage 100s linear infinite; /* Increase duration for slower rotation */
   }
   
@@ -14,28 +15,13 @@
     }
   }
 
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 250px; /* Adjust the container height */
+ 
+  .mb-4{
+    color: black;
   }
-  
-  .logo {
-    align-items: center; /* Adjust the font size to make it larger */
-    font-weight: bold; /* Make the font bold for a professional look */
-    color: #8570d9; /* Adjust the text color */
-    animation: animateLogo 30s ease-in-out infinite alternate; /* Add animation */
+
+  .btn{
+    background-color: #7b67cd;
+    color: white;
+    font-size: large;
   }
-  
-  @keyframes animateLogo {
-    0% {
-      transform: scale(0.05);
-    }
-    100% {
-      transform: scale(1); /* Increase the scale for animation */
-    }
-  }
-  
-  
-  

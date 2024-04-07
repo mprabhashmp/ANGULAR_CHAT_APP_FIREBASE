@@ -129,4 +129,9 @@ export class AuthServiceService {
       this.router.navigate(['login']);
     });
   }
+
 }
+
+
+
+  
