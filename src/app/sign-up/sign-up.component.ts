@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../auth-service.service';
 import { Router } from '@angular/router';
+import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
+import {auth} from '../firebase'
 
 @Component({
   selector: 'app-sign-up',
@@ -15,7 +17,10 @@ export class SignUpComponent implements OnInit{
   ) { }
   ngOnInit() { }
 
+
   signin(){
     this.router.navigate(['/login']);
   }
+
+
 }

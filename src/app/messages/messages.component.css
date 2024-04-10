@@ -1,0 +1,13 @@
+.chat-bubble {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .right {
+    justify-content: flex-end;
+  }
+  .chat-bubble__left {
+    width: 50px; /* Adjust according to your design */
+    height: 50px; /* Adjust according to your design */
+    border-radius: 50%; /* Adjust according to your design */
+    margin-right: 10px; /* Adjust according to your design */
+  }

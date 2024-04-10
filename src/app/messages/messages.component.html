@@ -1,0 +1,7 @@
+<div [ngClass]="{'chat-bubble': true, 'right': message.id === user.uid}">
+    <img class="chat-bubble__left" [src]="message.avatar" alt="user avatar">
+    <div class="chat-bubble__right">
+      <p class="user-name">{{ message.name }}</p>
+      <p class="user-message">{{ message.text }}</p>
+    </div>
+  </div>
