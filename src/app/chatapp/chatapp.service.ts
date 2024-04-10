@@ -1,36 +1,40 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatappService {
-  // constructor(private auth: AngularFireAuth, private firestore: AngularFirestore) {}
+  constructor(private auth: AngularFireAuth, private firestore: AngularFirestore) {}
 
-  // signIn(email: string, password: string) {
-  //   return this.auth.signInWithEmailAndPassword(email, password);
-  // }
+  signIn(email: string, password: string) {
+    return this.auth.signInWithEmailAndPassword(email, password);
+  }
 
-  // signOut() {
-  //   return this.auth.signOut();
-  // }
+  signOut() {
+    return this.auth.signOut();
+  }
 
-  // getMessages(message: string, userId: string) {
-  //   return this.firestore.collection('messages').add({
-  //     message: message,
-  //     userId: userId,
-  //     timestamp: new Date().getTime()
-  //   });
-  // }
+  getMessages(message: string, userId: string) {
+    return this.firestore.collection('messages').add({
+      message: message,
+      userId: userId,
+      timestamp: new Date().getTime()
+    });
+  }
 
-  // fetchMessages() {
-  //   return this.firestore.collection('messages', ref => ref.orderBy('timestamp')).valueChanges();
-  // }
+  fetchMessages() {
+    return this.firestore.collection('messages', ref => ref.orderBy('timestamp')).valueChanges();
+  }
 
-  // subscribeToChat() {
-  //   return this.firestore.collection('messages', ref => ref.orderBy('timestamp')).valueChanges();
-  // }
+  subscribeToChat() {
+    return this.firestore.collection('messages', ref => ref.orderBy('timestamp')).valueChanges();
+  }
 
-  // unsubscribeFromChat() {
-  //   // Unsubscribe logic
-  // }
+  unsubscribeFromChat() {
+    // Unsubscribe logic
+  }
 }

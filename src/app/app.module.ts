@@ -18,6 +18,8 @@ import { ForgotpassswordComponent } from './forgotpasssword/forgotpasssword.comp
 import { EmailComponent } from './email/email.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ChatNavbarComponent } from './chat-navbar/chat-navbar.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -28,7 +30,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ForgotpassswordComponent,
     EmailComponent,
     DashboardComponent,
-    NavBarComponent
+    NavBarComponent,
+    ChatNavbarComponent,
+    MessagesComponent
+
   ],
   imports: [
     BrowserModule,

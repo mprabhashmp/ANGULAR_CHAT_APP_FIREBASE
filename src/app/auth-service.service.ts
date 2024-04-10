@@ -21,6 +21,7 @@ export class AuthServiceService {
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
     public ngZone: NgZone // NgZone service to remove outside scope warning
+
   ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -35,6 +36,8 @@ export class AuthServiceService {
       }
     });
   }
+
+
   // Sign in with email/password
   async SignIn(email: string, password: string) {
     try {
@@ -50,6 +53,9 @@ export class AuthServiceService {
       window.alert(error.message);
     }
   }
+
+
+
   // Sign up with email/password
   async SignUp(email: string, password: string) {
     try {
@@ -63,6 +69,8 @@ export class AuthServiceService {
       window.alert(error.message);
     }
   }
+
+
   // Send email verfificaiton when new user sign up
   async SendVerificationMail() {
     return this.afAuth.currentUser
@@ -71,6 +79,8 @@ export class AuthServiceService {
         this.router.navigate(['email']);
       });
   }
+
+
   // Reset Forggot password
   async ForgotPassword(passwordResetEmail: string) {
     return this.afAuth
@@ -82,16 +92,22 @@ export class AuthServiceService {
         window.alert(error);
       });
   }
+
+
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null && user.emailVerified !== false ? true : false;
   }
+
+
   // Sign in with Google
   async GoogleAuth() {
     await this.AuthLogin(new auth.GoogleAuthProvider());
     this.router.navigate(['dashboard']);
   }
+
+
   // Auth logic to run auth providers
   async AuthLogin(provider: any) {
     return this.afAuth
@@ -104,6 +120,8 @@ export class AuthServiceService {
         window.alert(error);
       });
   }
+
+
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
@@ -122,6 +140,9 @@ export class AuthServiceService {
       merge: true,
     });
   }
+
+
+
   // Sign out
   async SignOut() {
     return this.afAuth.signOut().then(() => {

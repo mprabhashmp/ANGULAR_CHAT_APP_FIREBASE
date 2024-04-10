@@ -1,33 +1,39 @@
-.chat-messages-show-container{
-    background-color: #bbb8b8;
-    height:400px;
-    display:flex;
-    flex-direction: column;
-    overflow: auto;
-}
-
-.chat-massages-show-list{
-    list-style: none;
-    margin:0;
-    padding:0;
-}
-
-.chat-messages-create-container{
-    background: #616161;
-    height:100px;
+.chat-container {
     display: flex;
-    justify-content: center;
-}
-
-input{
-    padding: 12px;
-    margin:25px 30px;
-    flex:2;
-    
-}
-
-button{
-    height:35px;
-    margin:auto 40px;
-    width:50px;
-}
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .messages {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 20px;
+  }
+  
+  .message {
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 16px;
+    background: #0084ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }

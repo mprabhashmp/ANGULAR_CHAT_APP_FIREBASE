@@ -10,4 +10,6 @@ export class NavBarComponent {
   constructor(public authService: AuthServiceService) {}
   
   ngOnInit(): void {}
+
+  
 }

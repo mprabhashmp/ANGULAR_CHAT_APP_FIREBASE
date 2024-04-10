@@ -1,8 +1,31 @@
-<!-- <div *ngFor="let message of messages | async">
-    <p><strong>{{ message.username }}:</strong> {{ message.message }}</p>
-  </div>
+
+<app-nav-bar></app-nav-bar>
+
+<br>
+<br>
+
+<div class="d-lg-flex half">
   
-  <input type="text" [(ngModel)]="newMessage" placeholder="Type your message...">
-  <button (click)="sendMessage()">Send</button>
-   -->
-   <p>sds</p>
+  <div class="contents order-2 order-md-1">
+    <div class="container">
+
+          <div class="chat-container">
+            <div class="messages">
+              <div *ngFor="let message of messages">
+                <div class="message">
+                  {{ message.text }}
+                </div>
+              </div>
+            </div>
+            <div class="input-container">
+              <input type="text" [(ngModel)]="message" (keydown.enter)="sendMessage()">
+              <button (click)="sendMessage()">Send</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
